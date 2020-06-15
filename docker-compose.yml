@@ -1,0 +1,32 @@
+version: "3"
+services:
+
+  cockroachdb:
+    container_name: cockroachdb
+    image: cockroachdb/cockroach:v20.1.1
+    command: start --insecure --store=attrs=ssd,path=/var/lib/cockroach/
+    restart: always
+    volumes:
+      - data:/var/lib/cockroach
+    expose:
+      - "8080"
+      - "26257"
+    ports:
+      - "26257:26257"
+      - "8080:8"
+
+  app:
+    build:
+      context: ./api
+    volumes:
+      - "./api:/go"
+    container_name: golang_app
+    ports:
+      - "8000:8000"
+    tty: true
+    depends_on:
+        - cockroachdb
+    
+
+volumes:
+  data:
