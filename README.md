@@ -1,13 +1,13 @@
-# About
+# :star2: About
 This is an API service made with Go using cockroachDB.
 
-## Requirements.
+## :ballot_box_with_check: Requirements.
 
 Before deployment, be sure to have Docker and docker-compose installed in your computer.
 
 I you already have it, install the cockroach image with the command: ```docker pull cockroachdb/cockroach```
 
-# Use
+# :crystal_ball:Use
 
 To deploy this app follow these steps:
 
@@ -27,5 +27,5 @@ To deploy this app follow these steps:
     ```bash
     docker exec -it golang_app bash -c "go run main.go"
     ```
-    
+
 Navigate to localhost:8000 to see the API working.
