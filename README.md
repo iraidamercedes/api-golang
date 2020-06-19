@@ -25,7 +25,21 @@ To deploy this app follow these steps:
     ```
     - In you computer
     ```bash
-    docker exec -it golang_app bash -c "go run main.go"
+    docker exec -it golang_app bash -c "go run main.go values.go index.go Test.go"
     ```
 
-Navigate to localhost:8000 to see the API working.
+If the api ask you for the following dependencies please follow the nex spets.
+
+- Once you have the docker running, open the root console with the following command: ```docker exec -it golang_app bash.```
+
+- Execute
+```Bash
+$ go get github.com/likexian/whois-go
+$ go get github.com/likexian/whois-parser-go
+$ go get github.com/valyala/fasthttp
+```
+
+Execute ``` go run main.go values.go index.go Test.go``` and 
+navigate to localhost:8000 to see the API working.
+
+You can query the localhost:8000/domain to check he first endpoint.

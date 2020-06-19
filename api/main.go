@@ -10,8 +10,8 @@ import (
 func main() {
 	router := fasthttprouter.New()
 	router.GET("/", Index)
-	router.GET("/Domain", Retrieve)
-	router.GET("/test", requestURL)
+	router.GET("/test", Test)
+	router.GET("/domain", RequestURL)
 
 	log.Fatal(fasthttp.ListenAndServe(":8000", router.Handler))
 }
